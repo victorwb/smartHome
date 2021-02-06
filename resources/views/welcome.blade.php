@@ -96,7 +96,7 @@
       </div>
     </div>
 
-    <!-- Single item 
+    <!-- Single item -->
     <div class="carousel-item">
       <img
         src={{ asset('img/smt.jpeg') }}
