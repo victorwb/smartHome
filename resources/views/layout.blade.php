@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
         <title>Smart Home</title>
 
@@ -46,7 +46,16 @@
             
             
             </div>
-            <img src={{ asset('img/me.jpeg') }} alt="" width="30" height="24" class="rounded-circle img-fluid">
+            
+
+
+            @foreach($images as $key => $image)
+              @if(($image ->id)==7)
+            <a href="{{ url('/image') }}"><img src="{{url('public/image')}}/{{$image->image}}" alt="" width="30" height="24" class="rounded-circle img-fluid"></a>
+            
+            @endif
+            @endforeach
+            
         </div>
 </nav>
   <!-- @include('inc.messages') -->
