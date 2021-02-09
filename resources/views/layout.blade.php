@@ -46,16 +46,12 @@
             
             
             </div>
-            
 
-
-            @foreach($images as $key => $image)
-              @if(($image ->id)==7)
-            <a href="{{ url('/image') }}"><img src="{{url('public/image')}}/{{$image->image}}" alt="" width="30" height="24" class="rounded-circle img-fluid"></a>
-            
-            @endif
-            @endforeach
-            
+           @if($images)
+            <a href="{{ url('/image') }}"><img src="{{url('public/image')}}/{{$images->image}}" alt="upload photo" width="30" height="24" class="rounded-circle img-fluid"></a>
+            @else
+            <a href="{{ url('/image') }}">profile photo</a>
+            @endif           
         </div>
 </nav>
   <!-- @include('inc.messages') -->

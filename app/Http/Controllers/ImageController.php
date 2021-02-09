@@ -29,7 +29,7 @@ class ImageController extends Controller
            $insert['image'] = "$profileImage";
         }
           $check = Image::insertGetId(
-                ['image' => 'me.jpg','user_id' => Auth::id()]
+                ['image' => $profileImage,'user_id' => Auth::id()]
               );
       //  $check = Image::insertGetId($insert);
        //Image::insert(['user_id' => Auth::id()]);
@@ -41,15 +41,15 @@ class ImageController extends Controller
 
     public function display(){
               
-        $images = User::find(1)->images;
-        $images = $images->get();
+      $images = DB::table('images')->where('user_id', Auth::id())->orderByDesc('id') -> first();
+       
         return view ('status',['images'=>$images]);
         
       } 
 
       public function display2(){
-        $images = DB::table('images');
-        $images = $images->get();
+        $images = DB::table('images')->where('user_id', Auth::id())->orderByDesc('id') -> first();
+       
         return view ('controls',['images'=>$images]);
       } 
 }
