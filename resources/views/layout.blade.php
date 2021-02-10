@@ -42,6 +42,9 @@
                 <li class="nav-item">
                 <a class="nav-link " href="/controls" tabindex="-1" aria-disabled="true">Controls</a>
                 </li>
+                <li class="nav-item">
+                <a class="nav-link " href="/dynamics" tabindex="-1" aria-disabled="true">Dynamics</a>
+                </li>
             </ul>
             
             

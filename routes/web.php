@@ -18,7 +18,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/dynamics', function () {
+    return view('dynamics');
+});
 // Route::get('/status', function () {
 //     return view('status');
 // })->middleware('auth');
